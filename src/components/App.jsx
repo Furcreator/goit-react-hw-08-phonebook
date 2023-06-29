@@ -1,12 +1,14 @@
-import ContactList from 'pages/Contacts';
-import Home from 'pages/Home';
-import Login from 'pages/Login';
-import Register from 'pages/Registration';
+
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import Contacts from 'pages/Contacts';
+import { lazy } from 'react';
+
+const Home = lazy(() => import('../pages/Home'));
+const Register = lazy(() => import('../pages/Registration'));
+const Login = lazy(() => import('../pages/Login'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   return (
