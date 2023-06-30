@@ -11,7 +11,7 @@ const clearAuthHeader = () => {
 };
 
 export const register = createAsyncThunk(
-  'auth/registration',
+  'auth/register',
   async (credentials, { rejectWithValue }) => {
     console.log(credentials);
     try {

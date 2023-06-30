@@ -33,12 +33,12 @@ const RegisterForm = () => {
         </label>
         <label htmlFor="email">
           Email
-          <Field type="tel" name="email" placeholder="Your email" />
+          <Field type="email" name="email" placeholder="Your email" />
           <ErrorMessage component="div" name="email" />
         </label>
         <label htmlFor="password">
           Password
-          <Field type="tel" name="password" placeholder="Your password" />
+          <Field type="password" name="password" placeholder="Your password" />
           <ErrorMessage component="div" name="password" />
         </label>
         <button type="submit">Register</button>
