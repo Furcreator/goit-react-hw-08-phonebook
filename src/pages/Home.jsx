@@ -1,12 +1,14 @@
+import { Text } from 'components/App.styled';
+
 export default function Home() {
   return (
-    <div >
-      <h1>
+    <div>
+      <Text>
         Welcome page{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
-      </h1>
+      </Text>
     </div>
   );
 }

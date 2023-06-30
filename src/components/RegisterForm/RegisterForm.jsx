@@ -1,4 +1,11 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import {
+  Button,
+  Forma,
+  Input,
+  Label,
+  Wrap,
+} from 'components/LoginForm/LoginForm.styled';
+import { ErrorMessage, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
@@ -25,24 +32,32 @@ const RegisterForm = () => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form autoComplete="off">
-        <label htmlFor="name">
-          Name
-          <Field type="text" name="name" placeholder="Your name" />
-          <ErrorMessage component="div" name="name" />
-        </label>
-        <label htmlFor="email">
-          Email
-          <Field type="email" name="email" placeholder="Your email" />
-          <ErrorMessage component="div" name="email" />
-        </label>
-        <label htmlFor="password">
-          Password
-          <Field type="password" name="password" placeholder="Your password" />
-          <ErrorMessage component="div" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </Form>
+      <Forma autoComplete="off">
+        <h2>Registration</h2>
+        <Wrap>
+          <Label htmlFor="name">
+            Name
+            <Input type="text" name="name" placeholder="Your name" />
+            <ErrorMessage component="div" name="name" />
+          </Label>
+          <Label htmlFor="email">
+            Email
+            <Input type="email" name="email" placeholder="Your email" />
+            <ErrorMessage component="div" name="email" />
+          </Label>
+          <Label htmlFor="password">
+            Password
+            <Input
+              type="password"
+              name="password"
+              placeholder="Your password"
+            />
+            <ErrorMessage component="div" name="password" />
+          </Label>
+        </Wrap>
+
+        <Button type="submit">Register</Button>
+      </Forma>
     </Formik>
   );
 };

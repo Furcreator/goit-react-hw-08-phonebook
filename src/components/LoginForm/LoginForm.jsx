@@ -1,8 +1,9 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
 import * as Yup from 'yup';
+import { Button, Forma, Input, Label, Wrap } from './LoginForm.styled';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -23,19 +24,26 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form autoComplete="off">
-        <label htmlFor="name">
-          Name
-          <Field type="text" name="name" placeholder="Your name" />
-          <ErrorMessage component="div" name="name" />
-        </label>
-        <label htmlFor="password">
-          Password
-          <Field type="password" name="password" placeholder="Your password" />
-          <ErrorMessage component="div" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </Form>
+      <Forma autoComplete="off">
+        <h2>Log In</h2>
+        <Wrap>
+          <Label htmlFor="name">
+            Name
+            <Input type="text" name="name" placeholder="Your name" />
+            <ErrorMessage component="div" name="name" />
+          </Label>
+          <Label htmlFor="password">
+            Password
+            <Input
+              type="password"
+              name="password"
+              placeholder="Your password"
+            />
+            <ErrorMessage component="div" name="password" />
+          </Label>
+        </Wrap>
+        <Button type="submit">Register</Button>
+      </Forma>
     </Formik>
   );
 };

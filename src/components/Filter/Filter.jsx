@@ -1,7 +1,8 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/filter/filterSelectors';
 import { editFilter } from 'redux/filter/filterSlice';
+import { Input } from './Filter.styled';
 
 const Filter = () => {
   const value = useSelector(selectFilter);
@@ -11,13 +12,11 @@ const Filter = () => {
   };
   return (
     <Formik>
-      <div>
-        <Field
-          placeholder="Search Contact"
-          onChange={handleChangeFilter}
-          value={value}
-        />
-      </div>
+      <Input
+        placeholder="Search Contact"
+        onChange={handleChangeFilter}
+        value={value}
+      />
     </Formik>
   );
 };
