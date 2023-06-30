@@ -1,3 +1,4 @@
+import { addContact, deleteContact, fetchContacts } from './contactsOperations';
 
 const { createSlice } = require('@reduxjs/toolkit');
 
