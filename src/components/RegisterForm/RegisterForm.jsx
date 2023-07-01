@@ -16,7 +16,10 @@ const RegisterForm = () => {
   const schema = Yup.object().shape({
     name: Yup.string().required('Please provide a name'),
     email: Yup.string().email().required('Please provide a email'),
-    password: Yup.string().required('Please provide a valid password'),
+    password: Yup.string()
+      .required('Please provide a valid password')
+      .min(8, 'Password is too short - should be 8 chars minimum.')
+      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
   const [name] = useState('');
   const [email] = useState('');

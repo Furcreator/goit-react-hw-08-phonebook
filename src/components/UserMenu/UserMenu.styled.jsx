@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const UserMenuContainer = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
   padding-left: 20px;
   padding-right: 20px;
 
-  background-color: #2196f3;
+  background-color: darkblue;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border-width: 0;
@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
   align-self: center;
 
   :hover {
-    background-color: #5ab1f8;
+    background-color: darkorchid;
     transform: scale(1.1);
   }
 

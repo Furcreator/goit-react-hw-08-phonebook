@@ -1,4 +1,3 @@
-
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
@@ -16,7 +15,7 @@ export const StyledNavLink = styled(NavLink)`
   padding-left: 20px;
   padding-right: 20px;
 
-  background-color: #2196f3;
+  background-color: darkblue;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border-width: 0;
@@ -41,12 +40,12 @@ export const StyledNavLink = styled(NavLink)`
   align-self: center;
 
   :hover {
-    background-color: #5ab1f8;
+    background-color: darkorchid;
     transform: scale(1.1);
   }
 
   &.active {
-    background-color: orange;
+    background-color: darkorchid;
   }
 
   margin-right: 20px;

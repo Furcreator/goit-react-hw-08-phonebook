@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { AuthNavContainer } from './AuthNav.styled';
 import { StyledNavLink } from 'components/Header/Header.styled';
 

@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Field, Form } from 'formik';
 
-
 export const Forma = styled(Form)`
   display: flex;
   flex-direction: column;
@@ -37,7 +36,7 @@ export const Button = styled.button`
   width: 200px;
   height: 40px;
 
-  background-color: #2196f3;
+  background-color: darkblue;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border-width: 0;
@@ -61,7 +60,7 @@ export const Button = styled.button`
   align-self: center;
 
   :hover {
-    background-color: #5ab1f8;
+    background-color: darkorchid;
     transform: scale(1.1);
   }
 `;

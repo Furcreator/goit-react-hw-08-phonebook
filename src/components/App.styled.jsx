@@ -12,5 +12,9 @@ export const Container = styled.div`
 `;
 
 export const Text = styled.h1`
-    text-align: center;
+  text-align: center;
+`;
+export const Thumb = styled.div`
+  display: flex;
+  justify-content: center;
 `;

@@ -8,10 +8,13 @@ import { Button, Forma, Input, Label, Wrap } from './LoginForm.styled';
 const LoginForm = () => {
   const dispatch = useDispatch();
   const schema = Yup.object().shape({
-    name: Yup.string().required('Please provide a name'),
-    password: Yup.string().required('Please provide a password'),
+    email: Yup.string().required('Please provide a name'),
+    password: Yup.string()
+      .required('Please provide a password')
+      .min(8, 'Password is too short - should be 8 chars minimum.')
+      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
-  const [name] = useState('');
+  const [email] = useState('');
   const [password] = useState('');
   const handleSubmit = (values, { resetForm }) => {
     dispatch(logIn(values));
@@ -20,17 +23,17 @@ const LoginForm = () => {
   };
   return (
     <Formik
-      initialValues={{ name, password }}
+      initialValues={{ email, password }}
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
       <Forma autoComplete="off">
         <h2>Log In</h2>
         <Wrap>
-          <Label htmlFor="name">
-            Name
-            <Input type="text" name="name" placeholder="Your name" />
-            <ErrorMessage component="div" name="name" />
+          <Label htmlFor="email">
+            Email
+            <Input type="text" name="email" placeholder="Your email" />
+            <ErrorMessage component="div" name="email" />
           </Label>
           <Label htmlFor="password">
             Password
@@ -42,7 +45,7 @@ const LoginForm = () => {
             <ErrorMessage component="div" name="password" />
           </Label>
         </Wrap>
-        <Button type="submit">Register</Button>
+        <Button type="submit">Log In</Button>
       </Forma>
     </Formik>
   );

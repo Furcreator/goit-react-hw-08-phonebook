@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
@@ -6,6 +6,13 @@ import { addContact } from 'redux/contacts/contactsOperations';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
+import {
+  Button,
+  Forma,
+  Label,
+  Wrap,
+} from 'components/LoginForm/LoginForm.styled';
+import { Input } from 'components/Filter/Filter.styled';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -48,19 +55,21 @@ const ContactsForm = () => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form autoComplete="off">
-        <label htmlFor="name">
-          Name
-          <Field type="text" name="name" placeholder="Your name" />
-          <ErrorMessage component="div" name="name" />
-        </label>
-        <label htmlFor="number">
-          Number
-          <Field type="tel" name="number" placeholder="Your number" />
-          <ErrorMessage component="div" name="number" />
-        </label>
-        <button type="submit">Add contact</button>
-      </Form>
+      <Forma autoComplete="off">
+        <Wrap>
+          <Label htmlFor="name">
+            Name
+            <Input type="text" name="name" placeholder="Your name" />
+            <ErrorMessage component="div" name="name" />
+          </Label>
+          <Label htmlFor="number">
+            Number
+            <Input type="tel" name="number" placeholder="Your number" />
+            <ErrorMessage component="div" name="number" />
+          </Label>
+        </Wrap>
+        <Button type="submit">Add contact</Button>
+      </Forma>
     </Formik>
   );
 };
