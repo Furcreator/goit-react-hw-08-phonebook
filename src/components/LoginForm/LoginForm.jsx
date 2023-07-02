@@ -9,10 +9,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const schema = Yup.object().shape({
     email: Yup.string().required('Please provide a name'),
-    password: Yup.string()
-      .required('Please provide a password')
-      .min(8, 'Password is too short - should be 8 chars minimum.')
-      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+    password: Yup.string().required('Please provide a password'),
   });
   const [email] = useState('');
   const [password] = useState('');
